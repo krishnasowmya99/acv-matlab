@@ -1,0 +1,23 @@
+clc;
+clear all;
+close all;
+deskimg=imread("Desktop.png");
+figure;imshow(deskimg);
+disp(size(deskimg));
+flower=imread("FlwImg.jpg");
+figure;imshow(flower);
+disp(size(flower));
+crop=flower(500:1000,1500:2000,:);
+figure;imshow(crop);
+greenChannel = crop(:,:,2);
+% redChannel = crop(:,:,1);
+% blueChannel=crop(:,:,3);
+figure;imshow(greenChannel);title("Cropped version with green channel");
+% allBlack = zeros(size(crop, 1), size(crop, 2), 'uint8');
+% just_green = cat(3, allBlack, greenChannel, allBlack);
+% figure;imshow(just_green)
+% title('Green Channel in Green');
+% just_red = cat(3, redChannel, allBlack, allBlack);
+% figure;imshow(just_red);
+% just_blue=cat(3,allBlack,allBlack,blueChannel);
+% figure;imshow(just_blue);
